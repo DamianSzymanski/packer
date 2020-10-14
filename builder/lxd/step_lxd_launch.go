@@ -61,7 +61,7 @@ func (s *stepLxdLaunch) Cleanup(state multistep.StateBag) {
 		"delete", "--force", config.ContainerName,
 	}
 
-	ui.Say("Unregistering and deleting deleting container...")
+	ui.Say("Unregistering and deleting container...")
 	if _, err := LXDCommand(cleanup_args...); err != nil {
 		ui.Error(fmt.Sprintf("Error deleting container: %s", err))
 	}
